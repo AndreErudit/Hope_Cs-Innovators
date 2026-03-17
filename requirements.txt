@@ -5,3 +5,6 @@ flask_socketio
 eventlet
 openai
 werkzeug
+requests
+google-genai
+SQLAlchemy
