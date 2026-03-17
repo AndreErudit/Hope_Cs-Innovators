@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>Connexion</header>
+
+<div class="container">
+<div class="card">
+
+<form method="POST">
+    <input name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Mot de passe" required>
+    <button>Se connecter</button>
+</form>
+
+<br>
+<a href="/register">Créer un compte</a>
+
+</div>
+</div>
+
+</body>
+</html>

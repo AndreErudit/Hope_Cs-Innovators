@@ -1,0 +1,21 @@
+<header>📂 Ressources</header>
+
+<div class="container">
+<div class="card">
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file">
+<button>Upload</button>
+</form>
+
+<hr>
+
+{% for r in resources %}
+<p>{{r.filename}} - 
+<a href="/download/{{r.filename}}">Télécharger</a></p>
+{% endfor %}
+
+<a href="/dashboard">Retour</a>
+
+</div>
+</div>

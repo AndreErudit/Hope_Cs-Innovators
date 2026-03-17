@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+/* CARD */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* LINKS */
+a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+/* USERS */
+.online {
+    color: #22c55e;
+}
+
+.offline {
+    color: #ef4444;
+}
+
+/* CHAT */
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* MESSAGE */
+.message {
+    background: #1e293b;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+/* AI */
+.ai-box {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}

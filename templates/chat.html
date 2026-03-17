@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+
+<header>💬 Chat de la promotion</header>
+
+<div class="container">
+
+<div id="messages">
+    {% for m in messages %}
+    <div class="message" id="msg-{{m.id}}">
+        <b>{{m.sender.name}}</b>: {{m.content}}
+        {% if m.read %} ✔️{% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<input id="msg" placeholder="Écris un message...">
+<button onclick="sendMessage()">Envoyer</button>
+
+<br><br>
+<a href="/dashboard">Retour</a>
+
+</div>
+
+<script>
+const socket = io();
+
+socket.on("message", function(data){
+    document.getElementById("messages").innerHTML += 
+    `<div class="message" id="msg-${data.id}">
+    <b>${data.user}</b>: ${data.msg}
+    </div>`;
+});
+
+socket.on("status", function(msg){
+    alert(msg);
+});
+
+socket.on("read", function(id){
+    document.getElementById("msg-"+id).innerHTML += " ✔️";
+});
+
+function sendMessage(){
+    let msg = document.getElementById("msg").value;
+    if(msg.trim() !== ""){
+        socket.send(msg);
+        document.getElementById("msg").value = "";
+    }
+}
+</script>
+
+</body>
+</html>

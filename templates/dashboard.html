@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>Dashboard</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Menu</h2>
+    <a href="/chat"><button>💬 Chat</button></a>
+    <a href="/ai"><button>🤖 Assistant IA</button></a>
+    <a href="/logout"><button>🚪 Déconnexion</button></a>
+</div>
+
+<br>
+
+<div class="card">
+    <h3>Utilisateurs</h3>
+    <ul>
+        {% for u in users %}
+        <li>
+            {{u.name}} 
+            {% if u.online %}
+            <span class="online">● en ligne</span>
+            {% else %}
+            <span class="offline">● hors ligne</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</div>
+
+</body>
+</html>

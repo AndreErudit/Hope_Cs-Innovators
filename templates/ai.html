@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assistant IA</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>🤖 Assistant IA</header>
+
+<div class="container">
+
+<div class="card">
+<form method="POST">
+    <input name="q" placeholder="Pose ta question informatique..." required>
+    <button>Envoyer</button>
+</form>
+
+{% if answer %}
+<div class="ai-box">
+    <b>Réponse :</b>
+    <p>{{answer}}</p>
+</div>
+{% endif %}
+
+</div>
+
+<br>
+<a href="/dashboard">Retour</a>
+
+</div>
+
+</body>
+</html>
